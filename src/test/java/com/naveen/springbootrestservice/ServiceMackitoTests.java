@@ -3,9 +3,8 @@ package com.naveen.springbootrestservice;
 import com.naveen.springbootcountryproject.beans.Country;
 import com.naveen.springbootcountryproject.repositories.CountryRepository;
 import com.naveen.springbootcountryproject.services.CountryService;
-import javafx.beans.binding.When;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.ClassOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +17,6 @@ import static org.mockito.Mockito.*;
 
 
 @SpringBootTest(classes = {ServiceMackitoTests.class})
-@TestClassOrder()
 public class ServiceMackitoTests {
 
 

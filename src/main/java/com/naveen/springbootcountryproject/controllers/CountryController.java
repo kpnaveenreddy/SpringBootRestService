@@ -18,9 +18,16 @@ public class CountryController {
      CountryService countryService;
 
     @GetMapping("/getcountries")
-    public List<Country> getCountries()
+    public ResponseEntity<List<Country>> getCountries()
     {
-       return  countryService.getAllCountries();
+      try {
+          List<Country> countries=countryService.getAllCountries();
+          return new ResponseEntity<List<Country>>(countries,HttpStatus.FOUND);
+      }
+      catch (Exception e)
+      {
+          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      }
     }
 
 
